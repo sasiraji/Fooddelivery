@@ -28,12 +28,12 @@ const Footer = () => {
             <h2>GET IN TOUCH</h2>
             <ul>
                 <li>+1-212-456-7890</li>
-                <li>contact@FoodDelivery.com</li>
+                <li>contact@aryascusine.com</li>
             </ul>
         </div>
       </div>
       <hr />
-      <p className="footer-copyright">Copyright 2024 © FoodDelivery.com - All Right Reserved.</p>
+      <p className="footer-copyright">Copyright 2024 © Arayscusine.com - All Right Reserved.</p>
     </div>
   )
 }
