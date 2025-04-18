@@ -1,6 +1,6 @@
 import React from 'react';
 import './ExploreMenu.css';
-import { assets } from '../../assets/assets';
+import assets from '../../assets/assets';
 
 const categories = [
   { name: 'Appetizers', image: assets.menu_1 },
