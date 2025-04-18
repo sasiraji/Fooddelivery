@@ -3,7 +3,7 @@ import './PlaceOrder.css'
 import { StoreContext } from '../../Context/StoreContext'
 import { useNavigate } from 'react-router-dom';
 import { foodList } from '../../data/menuData';
-import assets from '../../assets/assets';
+import * as assets from '../../assets/assets';
 
 const PlaceOrder = () => {
   const { getTotalCartAmount, cartItems, currency, deliveryCharge } = useContext(StoreContext);
