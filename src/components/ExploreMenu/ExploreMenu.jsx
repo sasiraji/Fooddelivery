@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { foodList } from '../../data/menuData';
-import assets from '../../assets/assets';
+import * as assets from '../../assets/assets';
+
 
 function ExploreMenu() {
   const categories = [...new Set(foodList.map(item => item.category || 'All'))];
