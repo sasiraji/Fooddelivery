@@ -9,7 +9,8 @@ function FoodCard({ image, name, price, description }) {
       <div className="food-item-details">
         <h4>{name}</h4>
         <p>{description}</p>
-        <p>₹{price}</p>
+        <p>${price}</p>
+
       </div>
     </div>
   );
