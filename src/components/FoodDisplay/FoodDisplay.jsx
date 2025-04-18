@@ -72,8 +72,11 @@ const foodList = [
   { id: 66, image: assets.placeholder, name: 'Soda', price: 3.19, description: 'Delicious and freshly made Soda.' },
   { id: 67, image: assets.placeholder, name: 'South Indian Filter Coffee', price: 3.79, description: 'Delicious and freshly made South Indian Filter Coffee.' },
   { id: 68, image: assets.placeholder, name: 'Masala Tea', price: 3.79, description: 'Delicious and freshly made Masala Tea.' },
+  { id: 69, image: assets.placeholder, name: 'Chef’s Special Combo', price: 14.99, description: 'Delicious and freshly made Chef’s Special Combo.' },
+  { id: 70, image: assets.placeholder, name: 'Onion Dosa', price: 9.99, description: 'Delicious and freshly made Onion Dosa.' },
+  { id: 71, image: assets.placeholder, name: 'Keerai Vadai (3 pcs)', price: 4.99, description: 'Delicious and freshly made Keerai Vadai (3 pcs).' },
+  { id: 72, image: assets.placeholder, name: 'Filter Coffee Ice', price: 5.49, description: 'Delicious and freshly made Filter Coffee Ice.' },
 ];
-
 function FoodDisplay() {
   return (
     <div className="food-display">
