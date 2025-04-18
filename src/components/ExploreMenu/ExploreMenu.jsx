@@ -1,28 +1,32 @@
-import React, { useContext } from 'react'
-import './ExploreMenu.css'
-import { StoreContext } from '../../Context/StoreContext'
+import React, { useState } from 'react';
+import { foodList } from '../../data/menuData';
+import assets from '../../assets/assets';
 
-const ExploreMenu = ({category,setCategory}) => {
+function ExploreMenu() {
+  const categories = [...new Set(foodList.map(item => item.category || 'All'))];
+  const [category, setCategory] = useState('All');
 
-  const {menu_list} = useContext(StoreContext);
-  
+  const filteredList = category === 'All' ? foodList : foodList.filter(item => item.category === category);
+
   return (
-    <div className='explore-menu' id='explore-menu'>
-      <h1>Explore our menu</h1>
-      <p className='explore-menu-text'>Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
-      <div className="explore-menu-list">
-        {menu_list.map((item,index)=>{
-            return (
-                <div onClick={()=>setCategory(prev=>prev===item.menu_name?"All":item.menu_name)} key={index} className='explore-menu-list-item'>
-                    <img src={item.menu_image} className={category===item.menu_name?"active":""} alt="" />
-                    <p>{item.menu_name}</p>
-                </div>
-            )
-        })}
+    <div className="explore-menu">
+      <div className="categories">
+        {categories.map((cat, index) => (
+          <button key={index} className={cat === category ? 'active' : ''} onClick={() => setCategory(cat)}>
+            {cat}
+          </button>
+        ))}
       </div>
-      <hr />
+      <div className="menu-list">
+        {filteredList.map(item => (
+          <div key={item.id}>
+            <img src={assets[item.image]} alt={item.name} />
+            <p>{item.name} - ${item.price}</p>
+          </div>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default ExploreMenu
+export default ExploreMenu;
