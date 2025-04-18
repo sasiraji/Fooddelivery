@@ -2,7 +2,8 @@ import React from 'react';
 import './FoodDisplay.css';
 import FoodCard from './FoodCard';
 import { foodList } from '../../data/menuData';
-import assets from '../../assets/assets';
+import * as assets from '../../assets/assets'; 
+
 
 function FoodDisplay() {
   return (
