@@ -46,7 +46,7 @@ const foodList = [
   { id: 40, image: assets.placeholder, name: 'Dosa', price: 11.99, description: 'Delicious and freshly made Dosa.' },
   { id: 41, image: assets.placeholder, name: 'Chopsy Parotta - Egg (Kothu)', price: 13.99, description: 'Delicious and freshly made Chopsy Parotta - Egg (Kothu).' },
   { id: 42, image: assets.placeholder, name: 'Chopsy Parotta - Chicken (Kothu)', price: 13.99, description: 'Delicious and freshly made Chopsy Parotta - Chicken (Kothu).' },
-  { id: 43, image: assets.placeholder, name: 'Curry Chef's Choice', price: 9.99, description: 'Delicious and freshly made Curry Chef's Choice.' },
+  { id: 43, image: assets.placeholder, name: 'Curry Chefs Choice', price: 9.99, description: 'Delicious and freshly made Curry Chef's Choice.' },
   { id: 44, image: assets.placeholder, name: 'Lentil Tomato Curry', price: 9.99, description: 'Delicious and freshly made Lentil Tomato Curry.' },
   { id: 45, image: assets.placeholder, name: 'Mutter Curry Semi Gravy', price: 9.99, description: 'Delicious and freshly made Mutter Curry Semi Gravy.' },
   { id: 46, image: assets.placeholder, name: 'Butter Paneer Masala', price: 10.99, description: 'Delicious and freshly made Butter Paneer Masala.' },
