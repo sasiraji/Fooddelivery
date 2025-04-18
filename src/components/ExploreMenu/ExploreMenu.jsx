@@ -3,15 +3,16 @@ import './ExploreMenu.css';
 import assets from '../../assets/assets';
 
 const categories = [
-  { name: 'Appetizers', image: assets.menu_1 },
-  { name: 'Bread Rolls', image: assets.menu_2 },
-  { name: 'Bread', image: assets.menu_3 },
-  { name: 'Burritos', image: assets.menu_4 },
-  { name: 'Curry', image: assets.menu_5 },
-  { name: 'Dessert', image: assets.menu_6 },
-  { name: 'Rice Bowl', image: assets.menu_7 },
-  { name: 'Rice Variety', image: assets.menu_8 }
+  { name: 'Appetizers', image: '/images/menu/menu_1.png' },
+  { name: 'Bread Rolls', image: '/images/menu/menu_2.png' },
+  { name: 'Bread', image: '/images/menu/menu_3.png' },
+  { name: 'Burritos', image: '/images/menu/menu_4.png' },
+  { name: 'Curry', image: '/images/menu/menu_5.png' },
+  { name: 'Dessert', image: '/images/menu/menu_6.png' },
+  { name: 'Rice Bowl', image: '/images/menu/menu_7.png' },
+  { name: 'Rice Variety', image: '/images/menu/menu_8.png' }
 ];
+
 
 const ExploreMenu = () => {
   return (
