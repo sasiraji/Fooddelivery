@@ -4,17 +4,16 @@ import FoodItem from '../FoodItem/FoodItem'
 import { StoreContext } from "../../Context/StoreContext"
 
 const FoodDisplay = ({category}) => {
-  const {food_list} = useContext(StoreContext);
+  const { food_list, isLoading } = useContext(StoreContext);
   const [filteredItems, setFilteredItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
+    if (!food_list) return;
+    
     const filtered = food_list.filter(item => 
       category === "All" || category === item.category
     );
     setFilteredItems(filtered);
-    setIsLoading(false);
   }, [category, food_list]);
 
   if (isLoading) {
