@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 //import { food_list, menu_list } from "../assets/assets";
-import { food_list as dummy_food_list, menu_list } from "../assets/assets";
+import { food_list as initialFoodList, menu_list } from "../assets/assets";
 
 import axios from "axios";
 export const StoreContext = createContext(null);
@@ -8,7 +8,7 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
 
     const url = "http://localhost:4000"
-    const [food_list, setFood_list] = useState(dummy_food_list);
+    const [food_list, setFood_list] = useState(initialFoodList);
     const [cartItems, setCartItems] = useState({});
     const [token, setToken] = useState("")
     const currency = "₹";
@@ -62,11 +62,11 @@ const StoreContextProvider = (props) => {
             if (response.data && response.data.data) {
                 setFood_list(response.data.data);
             } else {
-                setFood_list(dummy_food_list);
+                setFood_list(food_list);
             }
         } catch (error) {
             console.error("Error fetching food list:", error);
-            setFood_list(dummy_food_list);
+            setFood_list(food_list);
         }
     }
 
