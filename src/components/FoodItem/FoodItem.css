@@ -21,12 +21,13 @@
   overflow: hidden;
 }
 
+/* Only apply to main food image */
 .food-item-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 80px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -95,9 +96,11 @@
   min-width: 40px;
 }
 
+/* Ensure rating and add-to-cart icons are sized correctly */
 .food-item-rating img {
-  width: 14px;
-  height: 14px;
+  width: 14px !important;
+  height: 14px !important;
+  object-fit: contain;
 }
 
 .food-item-rating span {
@@ -170,9 +173,11 @@
   background: #d63a2d;
 }
 
+/* Ensure add-to-cart icons are sized correctly */
 .add-to-cart img {
-  width: 20px;
-  height: 20px;
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: contain;
 }
 
 .cart-counter {
@@ -250,3 +255,10 @@
     transform: translateY(0);
   }
 }
+
+/* Commented out to avoid affecting icons */
+/* .food-item img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+} */
