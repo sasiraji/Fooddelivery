@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { assets } from '../../assets/assets'
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount, url, currency, deliveryCharge } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart, addToCart, getTotalCartAmount, url, currency, deliveryCharge } = useContext(StoreContext);
   const navigate = useNavigate();
 
   return (
@@ -17,16 +17,25 @@ const Cart = () => {
         <br />
         <hr />
         {food_list.map((item, index) => {
-          if (cartItems[item._id] > 0) {
+          if (cartItems[item.id.toString()] > 0) {
             return (
               <div key={index}>
                 <div className="cart-items-title cart-items-item">
-                  <img src={url + "/images/" + item.image} alt={item.name} />
+                  <img src={item.image} alt={item.name} />
                   <p>{item.name}</p>
                   <p>{currency}{item.price}</p>
-                  <div>{cartItems[item._id]}</div>
-                  <p>{currency}{(item.price * cartItems[item._id]).toFixed(2)}</p>
-                  <p className='cart-items-remove-icon' onClick={() => removeFromCart(item._id)}>x</p>
+                  <div className="cart-quantity-controls">
+                    <button onClick={() => removeFromCart(item.id.toString())}>-</button>
+                    <span>{cartItems[item.id.toString()]}</span>
+                    <button onClick={() => addToCart(item.id.toString())}>+</button>
+                  </div>
+                  <p>{currency}{(item.price * cartItems[item.id.toString()]).toFixed(2)}</p>
+                  <p className='cart-items-remove-icon' onClick={() => {
+                    // Remove all quantities of this item
+                    for(let i = 0; i < cartItems[item.id.toString()]; i++) {
+                      removeFromCart(item.id.toString());
+                    }
+                  }}>x</p>
                 </div>
                 <hr />
               </div>

@@ -104,6 +104,106 @@
   border-radius: 4px;
 }
 
+.cart-quantity-controls {
+  display: inline-flex;
+  align-items: center;
+  background: #f8f8f8;
+  border-radius: 25px;
+  padding: 4px;
+  border: 1px solid #e2e2e2;
+  min-width: 120px;
+  justify-content: space-between;
+}
+
+.cart-quantity-controls button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  color: #ff4c24;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.cart-quantity-controls button:hover {
+  background: #ff4c24;
+  color: white;
+  transform: scale(1.05);
+}
+
+.cart-quantity-controls span {
+  font-weight: 500;
+  color: #333;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Floating Action Buttons */
+.floating-actions {
+  position: fixed;
+  right: 30px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.floating-cart {
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.back-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
+.floating-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ff4c24;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 24px;
+}
+
+.floating-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background: #ff3910;
+}
+
+.floating-cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #333;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 750px) {
   .cart-bottom {
     flex-direction: column-reverse;

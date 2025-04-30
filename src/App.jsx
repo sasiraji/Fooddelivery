@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import StoreContextProvider from './Context/StoreContext'
+import FloatingActions from './components/FloatingActions/FloatingActions'
 
 // Lazy load components
 const Home = lazy(() => import('./pages/Home/Home'));
@@ -83,6 +84,7 @@ const App = () => {
                             <Route path='/verify' element={<Verify />} />
                         </Routes>
                     </main>
+                    <FloatingActions />
                     <Footer />
                 </div>
             </Suspense>

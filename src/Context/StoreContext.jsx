@@ -1,12 +1,13 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import { foodList, menuList } from '../data/menuData';
 
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState({});
-    const [food_list, setFoodList] = useState([]);
-    const [menu_list, setMenuList] = useState([]);
+    const [food_list, setFoodList] = useState(foodList);
+    const [menu_list, setMenuList] = useState(menuList);
     const [token, setToken] = useState(localStorage.getItem('token'));
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -37,8 +38,8 @@ const StoreContextProvider = ({ children }) => {
     const getTotalCartAmount = () => {
         let total = 0;
         for (const item of food_list) {
-            if (cartItems[item._id]) {
-                total += item.price * cartItems[item._id];
+            if (cartItems[item.id.toString()]) {
+                total += item.price * cartItems[item.id.toString()];
             }
         }
         return total;

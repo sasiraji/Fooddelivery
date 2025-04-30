@@ -1,11 +1,10 @@
-import React, { useContext, useState, useCallback } from 'react'
+import React, { useContext, useState, useCallback, useEffect } from 'react'
 import './FoodItem.css'
 import { assets } from '../../assets/assets'
 import { StoreContext } from "../../Context/StoreContext"
 import { toast } from 'react-toastify';
 
 const FoodItem = ({ image, name, price, desc, id }) => {
-    const [itemCount, setItemCount] = useState(0);
     const [imageError, setImageError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const { cartItems, addToCart, removeFromCart, currency } = useContext(StoreContext);
@@ -40,6 +39,8 @@ const FoodItem = ({ image, name, price, desc, id }) => {
         }
     };
 
+    const itemCount = cartItems[id] || 0;
+
     return (
         <div className='food-item' role="article" aria-label={`Food item: ${name}`}>
             <div className='food-item-img-container'>
@@ -63,7 +64,7 @@ const FoodItem = ({ image, name, price, desc, id }) => {
                     />
                 )}
                 <div className="food-item-actions">
-                    {!cartItems[id] ? (
+                    {itemCount === 0 ? (
                         <button 
                             className='add-to-cart-button'
                             onClick={handleAddToCart}
@@ -85,7 +86,7 @@ const FoodItem = ({ image, name, price, desc, id }) => {
                                     alt="Remove item" 
                                 />
                             </button>
-                            <span aria-label={`Current quantity: ${cartItems[id]}`}>{cartItems[id]}</span>
+                            <span aria-label={`Current quantity: ${itemCount}`}>{itemCount}</span>
                             <button 
                                 onClick={handleAddToCart}
                                 aria-label={`Add one more ${name} to cart`}
