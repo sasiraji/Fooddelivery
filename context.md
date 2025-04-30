@@ -1,5 +1,25 @@
 # Project Context
 
+## Recent Crucial Updates (2025-04-30)
+
+- **Hero Section Update:**
+  - The homepage hero section text was updated to:
+    > TASTY FOOD, DELIVERED WITH CARE
+    > At Aarya's Cuisine, we understand your cravings and your busy life. While you focus on what matters most, we bring your favorite dishes right to your doorstep — fresh, authentic, and hassle-free.
+- **Image Import Fixes:**
+  - Updated image imports in `src/assets/assets.js` to use `header_img.png` and `Herosection-Animatied.png`.
+  - Removed all references to missing or old image files to resolve Vite build errors.
+- **UI/UX Improvements:**
+  - Modernized hero section layout, statistics, and floating icons.
+  - Improved food item cards and About page visuals.
+- **Cart Logic:**
+  - Fixed "Add to Cart" bug by standardizing use of `id` across components and context.
+- **Back to Top Button:**
+  - Consolidated into `FloatingActions` for better UX.
+- **Deployment & Git Workflow:**
+  - All local changes are now automatically committed and pushed to the [GitHub main branch](https://github.com/sasiraji/Fooddelivery) after each update.
+  - To deploy, simply push to `main` and your deployment (e.g., Vercel/Netlify) will auto-update.
+
 ## Overview
 
 This is a modern food delivery web application built using React, Vite, and Node.js. The application features a responsive design, real-time cart management, and secure payment processing.
