@@ -207,8 +207,9 @@
 }
 
 .counter-btn img {
-  width: 16px;
-  height: 16px;
+  width: 16px !important;
+  height: 16px !important;
+  object-fit: contain;
 }
 
 .cart-counter span {
