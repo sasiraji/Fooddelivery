@@ -2,6 +2,7 @@
   padding: 40px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  min-height: calc(100vh - 300px); /* Account for header and footer */
 }
 
 .menu-category-header {
@@ -21,6 +22,40 @@
   color: #666;
 }
 
+.menu-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.no-items-message {
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 40px;
+}
+
+.no-items-message p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.no-items-message button {
+  background: #ff4c24;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.no-items-message button:hover {
+  background: #e63e1a;
+}
+
 @media (max-width: 768px) {
   .menu-category-page {
     padding: 20px 15px;
@@ -32,5 +67,10 @@
 
   .menu-category-header p {
     font-size: 1rem;
+  }
+
+  .menu-category-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
   }
 }
