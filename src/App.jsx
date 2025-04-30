@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import StoreContextProvider from './Context/StoreContext'
 import FloatingActions from './components/FloatingActions/FloatingActions'
+import BackToTop from './components/BackToTop/BackToTop'
 
 // Lazy load components
 const Home = lazy(() => import('./pages/Home/Home'));
@@ -84,6 +85,7 @@ const App = () => {
                 </Routes>
                 <Footer />
                 <FloatingActions />
+                <BackToTop />
                 {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
             </Suspense>
         </StoreContextProvider>

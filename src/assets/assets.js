@@ -61,6 +61,10 @@ import logout_icon from './logout_icon.png'
 import parcel_icon from './parcel_icon.png'
 import checked from './checked.png'
 import un_checked from './un_checked.png'
+import delivery_icon from './delivery_icon.png'
+import quality_icon from './quality_icon.png'
+import support_icon from './support_icon.png'
+import sample_image from './sample-image.png'
 
 export const assets = {
     logo,
@@ -83,7 +87,11 @@ export const assets = {
     bag_icon,
     parcel_icon,
     checked,
-    un_checked
+    un_checked,
+    delivery_icon,
+    quality_icon,
+    support_icon,
+    sample_image
 }
 
 export const menu_list = [
@@ -129,7 +137,8 @@ export const food_list = [
         image: food_1,
         price: 12,
         description: "Tender chicken seasoned with aromatic spices, wrapped in a soft roll.",
-        category: "Appetizers"
+        category: "Appetizers",
+        rating: 4.8
     },
     {
         _id: "2",
@@ -137,7 +146,8 @@ export const food_list = [
         image: food_2,
         price: 18,
         description: "Crispy, spicy egg bites garnished with fresh herbs and tangy sauce.",
-        category: "Appetizers"
+        category: "Appetizers",
+        rating: 4.5
     },
     {
         _id: "3",
@@ -145,7 +155,8 @@ export const food_list = [
         image: food_3,
         price: 16,
         description: "Golden-fried rolls filled with a blend of vegetables and savory spices.",
-        category: "Appetizers"
+        category: "Appetizers",
+        rating: 4.2
     },
     {
         _id: "4",
@@ -153,7 +164,8 @@ export const food_list = [
         image: food_4,
         price: 24,
         description: "Soft paneer cubes and fresh vegetables cooked in a rich, spiced gravy.",
-        category: "Appetizers"
+        category: "Appetizers",
+        rating: 4.7
     },
 
     // Bread Rolls (IDs 5-8)
@@ -163,7 +175,8 @@ export const food_list = [
         image: food_5,
         price: 14,
         description: "Classic egg roll wrapped in soft paratha with zesty chutney.",
-        category: "Bread Rolls"
+        category: "Bread Rolls",
+        rating: 4.9
     },
     {
         _id: "6",
@@ -171,7 +184,8 @@ export const food_list = [
         image: food_6,
         price: 12,
         description: "Succulent chicken pieces wrapped in a soft paratha and drizzled with sauce.",
-        category: "Bread Rolls"
+        category: "Bread Rolls",
+        rating: 4.6
     },
     {
         _id: "7",
@@ -179,7 +193,8 @@ export const food_list = [
         image: food_7,
         price: 20,
         description: "Freshly baked bread rolls that pair perfectly with any meal.",
-        category: "Bread Rolls"
+        category: "Bread Rolls",
+        rating: 4.3
     },
     {
         _id: "8",
@@ -187,7 +202,8 @@ export const food_list = [
         image: food_8,
         price: 15,
         description: "Crispy rolls stuffed with a medley of garden-fresh vegetables.",
-        category: "Bread Rolls"
+        category: "Bread Rolls",
+        rating: 4.4
     },
 
     // Bread (IDs 9-12)
@@ -197,7 +213,8 @@ export const food_list = [
         image: food_9,
         price: 14,
         description: "Traditional unleavened flatbread, soft and ideal for pairing with curries.",
-        category: "Bread"
+        category: "Bread",
+        rating: 4.7
     },
     {
         _id: "10",
@@ -205,7 +222,8 @@ export const food_list = [
         image: food_10,
         price: 22,
         description: "Steamed rice cakes that are light, fluffy, and perfect for breakfast.",
-        category: "Bread"
+        category: "Bread",
+        rating: 4.8
     },
     {
         _id: "11",
@@ -213,7 +231,8 @@ export const food_list = [
         image: food_11,
         price: 10,
         description: "Classic leavened flatbread baked to perfection, ideal with rich gravies.",
-        category: "Bread"
+        category: "Bread",
+        rating: 4.9
     },
     {
         _id: "12",
@@ -221,7 +240,8 @@ export const food_list = [
         image: food_12,
         price: 12,
         description: "Layered flatbread with a crisp texture, a beloved South Indian delight.",
-        category: "Bread"
+        category: "Bread",
+        rating: 4.6
     },
 
     // Burritoes (IDs 13-16)
@@ -231,7 +251,8 @@ export const food_list = [
         image: food_13,
         price: 12,
         description: "Grilled chicken tikka wrapped in a soft tortilla with zesty sauce.",
-        category: "Burritoes"
+        category: "Burritoes",
+        rating: 4.5
     },
     {
         _id: "14",
@@ -239,7 +260,8 @@ export const food_list = [
         image: food_14,
         price: 18,
         description: "Tender mutton cooked in aromatic spices and wrapped in a warm tortilla.",
-        category: "Burritoes"
+        category: "Burritoes",
+        rating: 4.7
     },
     {
         _id: "15",
@@ -247,7 +269,8 @@ export const food_list = [
         image: food_15,
         price: 16,
         description: "Fresh vegetables tossed in flavorful spices, all wrapped in a tortilla.",
-        category: "Burritoes"
+        category: "Burritoes",
+        rating: 4.3
     },
     {
         _id: "16",
@@ -255,7 +278,8 @@ export const food_list = [
         image: food_16,
         price: 14,
         description: "Soft paneer cubes with vegetables and spices in a warm tortilla wrap.",
-        category: "Burritoes"
+        category: "Burritoes",
+        rating: 4.4
     },
 
     // Curry (IDs 17-20)
@@ -265,7 +289,8 @@ export const food_list = [
         image: food_17,
         price: 22,
         description: "Tender chicken pieces in a rich, creamy tomato-based curry.",
-        category: "Curry"
+        category: "Curry",
+        rating: 4.9
     },
     {
         _id: "18",
@@ -273,7 +298,8 @@ export const food_list = [
         image: food_18,
         price: 20,
         description: "Classic chicken curry with aromatic spices and rich gravy.",
-        category: "Curry"
+        category: "Curry",
+        rating: 4.6
     },
     {
         _id: "19",
@@ -281,7 +307,8 @@ export const food_list = [
         image: food_19,
         price: 24,
         description: "Slow-cooked mutton in a flavorful curry with traditional spices.",
-        category: "Curry"
+        category: "Curry",
+        rating: 4.8
     },
     {
         _id: "20",
@@ -289,7 +316,8 @@ export const food_list = [
         image: food_20,
         price: 18,
         description: "Mixed vegetables cooked in a spiced curry sauce.",
-        category: "Curry"
+        category: "Curry",
+        rating: 4.4
     },
 
     // Dessert (IDs 21-24)
@@ -299,7 +327,8 @@ export const food_list = [
         image: food_21,
         price: 12,
         description: "Soft, sweet milk-solid balls soaked in rose-flavored sugar syrup.",
-        category: "Dessert"
+        category: "Dessert",
+        rating: 4.9
     },
     {
         _id: "22",
@@ -307,7 +336,8 @@ export const food_list = [
         image: food_22,
         price: 14,
         description: "Soft cheese patties soaked in sweetened, thickened milk.",
-        category: "Dessert"
+        category: "Dessert",
+        rating: 4.7
     },
     {
         _id: "23",
@@ -315,7 +345,8 @@ export const food_list = [
         image: food_23,
         price: 10,
         description: "Traditional rice pudding made with milk, sugar, and cardamom.",
-        category: "Dessert"
+        category: "Dessert",
+        rating: 4.5
     },
     {
         _id: "24",
@@ -323,7 +354,8 @@ export const food_list = [
         image: food_24,
         price: 8,
         description: "Crispy, sweet pretzel-shaped dessert soaked in sugar syrup.",
-        category: "Dessert"
+        category: "Dessert",
+        rating: 4.6
     },
 
     // Rice Bowl (IDs 25-28)
@@ -333,7 +365,8 @@ export const food_list = [
         image: food_25,
         price: 16,
         description: "Fragrant basmati rice with tender chicken pieces and aromatic spices.",
-        category: "Rice Bowl"
+        category: "Rice Bowl",
+        rating: 4.8
     },
     {
         _id: "26",
@@ -341,7 +374,8 @@ export const food_list = [
         image: food_26,
         price: 14,
         description: "Flavorful rice cooked with mixed vegetables and traditional spices.",
-        category: "Rice Bowl"
+        category: "Rice Bowl",
+        rating: 4.5
     },
     {
         _id: "27",
@@ -349,7 +383,8 @@ export const food_list = [
         image: food_27,
         price: 12,
         description: "Stir-fried rice with scrambled eggs and vegetables.",
-        category: "Rice Bowl"
+        category: "Rice Bowl",
+        rating: 4.3
     },
     {
         _id: "28",
@@ -357,7 +392,8 @@ export const food_list = [
         image: food_28,
         price: 15,
         description: "Aromatic rice cooked with mushrooms and herbs.",
-        category: "Rice Bowl"
+        category: "Rice Bowl",
+        rating: 4.4
     },
 
     // Rice Variety (IDs 29-32)
@@ -367,7 +403,8 @@ export const food_list = [
         image: food_29,
         price: 10,
         description: "Basmati rice flavored with cumin seeds and ghee.",
-        category: "Rice Variety"
+        category: "Rice Variety",
+        rating: 4.6
     },
     {
         _id: "30",
@@ -375,7 +412,8 @@ export const food_list = [
         image: food_30,
         price: 12,
         description: "Tangy rice dish with lemon juice and tempered spices.",
-        category: "Rice Variety"
+        category: "Rice Variety",
+        rating: 4.4
     },
     {
         _id: "31",
@@ -383,7 +421,8 @@ export const food_list = [
         image: food_31,
         price: 14,
         description: "Rice cooked with tomatoes and aromatic spices.",
-        category: "Rice Variety"
+        category: "Rice Variety",
+        rating: 4.3
     },
     {
         _id: "32",
@@ -391,6 +430,16 @@ export const food_list = [
         image: food_32,
         price: 16,
         description: "Fragrant rice cooked with coconut milk and spices.",
-        category: "Rice Variety"
+        category: "Rice Variety",
+        rating: 4.5
     }
 ]
+
+// Helper function to get image with fallback
+export const getImageWithFallback = (imagePath) => {
+    try {
+        return imagePath || sample_image;
+    } catch (error) {
+        return sample_image;
+    }
+}
