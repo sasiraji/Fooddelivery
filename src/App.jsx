@@ -14,6 +14,7 @@ const LoginPopup = lazy(() => import('./components/LoginPopup/LoginPopup'));
 const PlaceOrder = lazy(() => import('./pages/PlaceOrder/PlaceOrder'));
 const MyOrders = lazy(() => import('./pages/MyOrders/MyOrders'));
 const Verify = lazy(() => import('./pages/Verify/Verify'));
+const MenuCategoryPage = lazy(() => import('./pages/MenuCategories/MenuCategoryPage'));
 
 const LoadingSpinner = () => (
     <div style={{ 
@@ -72,21 +73,18 @@ const App = () => {
                 pauseOnHover
             />
             <Suspense fallback={<LoadingSpinner />}>
+                <Navbar setShowLogin={setShowLogin} />
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/cart' element={<Cart />} />
+                    <Route path='/place-order' element={<PlaceOrder />} />
+                    <Route path='/myorders' element={<MyOrders />} />
+                    <Route path='/verify' element={<Verify />} />
+                    <Route path='/menu/:category' element={<MenuCategoryPage />} />
+                </Routes>
+                <Footer />
+                <FloatingActions />
                 {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
-                <div className='app' style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-                    <Navbar setShowLogin={setShowLogin} />
-                    <main style={{ flex: 1 }}>
-                        <Routes>
-                            <Route path='/' element={<Home />} />
-                            <Route path='/cart' element={<Cart />} />
-                            <Route path='/order' element={<PlaceOrder />} />
-                            <Route path='/myorders' element={<MyOrders />} />
-                            <Route path='/verify' element={<Verify />} />
-                        </Routes>
-                    </main>
-                    <FloatingActions />
-                    <Footer />
-                </div>
             </Suspense>
         </StoreContextProvider>
     );
