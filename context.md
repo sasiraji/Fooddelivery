@@ -70,7 +70,7 @@ The application uses React Context for state management with the following key f
 
 ## Git Repository
 
-- Repository: [Aryas-Fooddelivery](https://github.com/yourusername/Aryas-Fooddelivery)
+- Repository: [Aryas-Fooddelivery](https://github.com/sasiraji/Fooddelivery)
 - Branch: main
 - Latest Version: v1-orginal
 - Backup Location: Project-Back-Ups/Aryas-Fooddelivery-main-18042025-v1-orginal
@@ -683,3 +683,61 @@ Multiple CSS files had merge conflicts that were resolved:
    - Time to Interactive < 3s
    - Largest Contentful Paint < 2.5s
    - Cumulative Layout Shift < 0.1
+
+## Repository Information
+
+- Remote Repository: [Aryas-Fooddelivery](https://github.com/sasiraji/Fooddelivery)
+- Branch: main
+- Deployment URL: [fooddelivery-nu-inky.vercel.app](https://fooddelivery-nu-inky.vercel.app)
+
+## Deployment Instructions
+
+### Local Development
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/sasiraji/Fooddelivery.git
+   cd Fooddelivery
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Access the application at: `http://localhost:5173`
+
+### Remote Deployment
+
+1. Push changes to GitHub:
+
+   ```bash
+   git add .
+   git commit -m "Your commit message"
+   git push origin main
+   ```
+
+2. The application will automatically deploy to Vercel at: [fooddelivery-nu-inky.vercel.app](https://fooddelivery-nu-inky.vercel.app)
+
+### Development Workflow
+
+1. Make changes locally
+2. Test changes in development environment
+3. Commit changes with descriptive messages
+4. Push to remote repository
+5. Verify deployment on Vercel
+
+### Environment Configuration
+
+- Development: `http://localhost:5173`
+- Production: `https://fooddelivery-nu-inky.vercel.app`
+- API Base URL: `http://localhost:4000` (development)
+- API Base URL: `https://api.fooddelivery.com` (production)
