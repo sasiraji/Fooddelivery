@@ -21,15 +21,15 @@ const Header = () => {
                     </div>
                     <div className="header-stats">
                         <div className="stat-item">
-                            <h3>5K+</h3>
+                            <h3>50+</h3>
                             <p>MERCHANTS</p>
                         </div>
                         <div className="stat-item">
-                            <h3>12K+</h3>
+                            <h3>150</h3>
                             <p>YUMMY MENUS</p>
                         </div>
                         <div className="stat-item">
-                            <h3>500K+</h3>
+                            <h3>1000+</h3>
                             <p>HAPPY CUSTOMERS</p>
                         </div>
                     </div>
