@@ -64,8 +64,8 @@ const MenuCategoryPage = () => {
                 {categoryFoods.length > 0 ? (
                     categoryFoods.map((food) => (
                         <FoodItem 
-                            key={food._id} 
-                            id={food._id}
+                            key={food.id} 
+                            id={food.id}
                             name={food.name}
                             price={food.price}
                             description={food.description}

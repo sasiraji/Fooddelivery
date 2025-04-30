@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import './ExploreMenu.css'
 import { StoreContext } from '../../Context/StoreContext'
+import { Link } from 'react-router-dom'
 
 const ExploreMenu = ({ category, setCategory }) => {
   const { menu_list } = useContext(StoreContext);
@@ -14,17 +15,10 @@ const ExploreMenu = ({ category, setCategory }) => {
         </p>
         <div className='explore-menu-list'>
           {menu_list.map((item, index) => (
-            <div 
-              key={index} 
+            <Link
+              key={index}
+              to={`/menu/${item.menu_name.toLowerCase().replace(/\s+/g, '-')}`}
               className='explore-menu-list-item'
-              onClick={() => setCategory(prev => prev === item.menu_name ? "All" : item.menu_name)}
-              role="button"
-              tabIndex={0}
-              onKeyPress={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  setCategory(prev => prev === item.menu_name ? "All" : item.menu_name);
-                }
-              }}
             >
               <img 
                 src={item.menu_image} 
@@ -32,7 +26,7 @@ const ExploreMenu = ({ category, setCategory }) => {
                 className={category === item.menu_name ? "active" : ""}
               />
               <p>{item.menu_name}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

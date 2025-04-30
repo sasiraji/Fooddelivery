@@ -22,6 +22,7 @@ const FloatingActions = () => {
         };
 
         window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Check initial scroll position
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -47,7 +48,7 @@ const FloatingActions = () => {
                 </button>
             </div>
             <button
-                className={`floating-button back-to-top ${!showBackToTop ? 'hidden' : ''}`}
+                className={`floating-button back-to-top${!showBackToTop ? ' hidden' : ''}`}
                 onClick={scrollToTop}
                 aria-label="Back to top"
             >

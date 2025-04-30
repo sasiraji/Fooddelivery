@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import StoreContextProvider from './Context/StoreContext'
 import FloatingActions from './components/FloatingActions/FloatingActions'
+import About from './pages/About/About'
 
 // Lazy load components
 const Home = lazy(() => import('./pages/Home/Home'));
@@ -81,6 +82,7 @@ const App = () => {
                     <Route path='/myorders' element={<MyOrders />} />
                     <Route path='/verify' element={<Verify />} />
                     <Route path='/menu/:category' element={<MenuCategoryPage />} />
+                    <Route path='/about' element={<About />} />
                 </Routes>
                 <Footer />
                 <FloatingActions />

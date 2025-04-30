@@ -1,6 +1,5 @@
 import basket_icon from './basket_icon.png'
 import logo from './logo.png'
-import header_img from './header_img.png'
 import search_icon from './search_icon.png'
 import menu_1 from './menu_1.png'
 import menu_2 from './menu_2.png'
@@ -65,12 +64,10 @@ import delivery_icon from './delivery_icon.png'
 import quality_icon from './quality_icon.png'
 import support_icon from './support_icon.png'
 import sample_image from './sample-image.png'
-import hero_animated from './Herosection-Animatied.png'
 
 export const assets = {
     logo,
     basket_icon,
-    header_img,
     search_icon,
     rating_starts,
     add_icon_green,
@@ -93,7 +90,8 @@ export const assets = {
     quality_icon,
     support_icon,
     sample_image,
-    hero_animated
+    food_1, food_2, food_3, food_4, food_5, food_6, food_7, food_8, food_9, food_10, food_11, food_12, food_13, food_14, food_15, food_16, food_17, food_18, food_19, food_20, food_21, food_22, food_23, food_24, food_25, food_26, food_27, food_28, food_29, food_30, food_31, food_32,
+    menu_1, menu_2, menu_3, menu_4, menu_5, menu_6, menu_7, menu_8
 }
 
 export const menu_list = [

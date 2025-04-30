@@ -64,6 +64,11 @@
   padding: 20px 0;
   font-size: 0.9rem;
 }
+.footer-content-left img {
+  max-width: 120px;
+  height: auto;
+  margin-bottom: 12px;
+}
 @media (max-width: 750px) {
   .footer-content {
     display: flex;
