@@ -33,26 +33,27 @@ const FloatingActions = () => {
     };
 
     return (
-        <div className="floating-actions">
-            <button 
-                className="floating-button floating-cart"
-                onClick={() => navigate('/cart')}
-                aria-label="Go to cart"
-            >
-                <FaShoppingCart />
-                {cartItemCount > 0 && (
-                    <span className="floating-cart-count">{cartItemCount}</span>
-                )}
-            </button>
-            
-            <button 
+        <>
+            <div className="floating-actions">
+                <button 
+                    className="floating-button floating-cart"
+                    onClick={() => navigate('/cart')}
+                    aria-label="Go to cart"
+                >
+                    <FaShoppingCart />
+                    {cartItemCount > 0 && (
+                        <span className="floating-cart-count">{cartItemCount}</span>
+                    )}
+                </button>
+            </div>
+            <button
                 className={`floating-button back-to-top ${!showBackToTop ? 'hidden' : ''}`}
                 onClick={scrollToTop}
                 aria-label="Back to top"
             >
                 <FaArrowUp />
             </button>
-        </div>
+        </>
     );
 };
 
