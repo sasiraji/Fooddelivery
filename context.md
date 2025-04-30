@@ -741,3 +741,46 @@ Multiple CSS files had merge conflicts that were resolved:
 - Production: `https://fooddelivery-nu-inky.vercel.app`
 - API Base URL: `http://localhost:4000` (development)
 - API Base URL: `https://api.fooddelivery.com` (production)
+
+# Development and Deployment Practices
+
+## Automatic Deployment Process
+
+After every significant change or feature update, the following steps should be automatically performed:
+
+1. Local Deployment:
+
+   - Kill any existing development servers
+   - Clean install dependencies if needed
+   - Start development server
+   - Verify changes locally
+
+2. Git Repository Update:
+
+   - Stage all changes
+   - Create meaningful commit message
+   - Push to repository
+   - Verify push success
+
+3. When to Skip:
+   - Only skip these steps if explicitly mentioned by the user
+   - When making rapid consecutive changes that are part of the same feature
+
+## Commit Message Format
+
+Commit messages should follow this format:
+
+```
+[Category]: Brief description
+
+- Detailed change 1
+- Detailed change 2
+```
+
+Categories:
+
+- UI: Visual changes
+- Feature: New functionality
+- Fix: Bug fixes
+- Refactor: Code improvements
+- Docs: Documentation updates

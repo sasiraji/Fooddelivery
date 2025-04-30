@@ -13,7 +13,11 @@ const FloatingActions = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setShowBackToTop(window.scrollY > 300);
+            if (window.scrollY > 300) {
+                setShowBackToTop(true);
+            } else {
+                setShowBackToTop(false);
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -28,7 +32,7 @@ const FloatingActions = () => {
     };
 
     return (
-        <div className="floating-actions">
+        <>
             <button 
                 className="floating-button floating-cart"
                 onClick={() => navigate('/cart')}
@@ -40,16 +44,14 @@ const FloatingActions = () => {
                 )}
             </button>
             
-            {showBackToTop && (
-                <button 
-                    className="floating-button back-to-top"
-                    onClick={scrollToTop}
-                    aria-label="Back to top"
-                >
-                    <FaArrowUp />
-                </button>
-            )}
-        </div>
+            <button 
+                className={`floating-button back-to-top ${!showBackToTop ? 'hidden' : ''}`}
+                onClick={scrollToTop}
+                aria-label="Back to top"
+            >
+                <FaArrowUp />
+            </button>
+        </>
     );
 };
 

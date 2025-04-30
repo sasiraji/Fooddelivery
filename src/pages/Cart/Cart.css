@@ -148,7 +148,8 @@
 .floating-actions {
   position: fixed;
   right: 30px;
-  z-index: 1000;
+  bottom: 30px;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -159,12 +160,22 @@
   right: 30px;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 9999;
 }
 
 .back-to-top {
   position: fixed;
   right: 30px;
   bottom: 30px;
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+.back-to-top.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .floating-button {
