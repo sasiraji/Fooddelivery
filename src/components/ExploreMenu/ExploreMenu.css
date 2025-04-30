@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .explore-menu{
     display: flex;
     flex-direction: column;
@@ -52,3 +53,48 @@
         font-size: 14px;
     }
 }
+=======
+
+.explore-menu {
+  padding: 30px 5vw;
+  text-align: center;
+}
+
+.explore-menu-text {
+  max-width: 700px;
+  margin: auto;
+  color: #555;
+  font-size: 16px;
+}
+
+.explore-menu-list {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.explore-menu-list-item {
+  width: 100px;
+  cursor: pointer;
+}
+
+.explore-menu-list-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.explore-menu-list-item:hover img {
+  transform: scale(1.05);
+}
+
+.explore-menu-list-item p {
+  margin-top: 10px;
+  font-weight: 500;
+}
+>>>>>>> 654e5f637d09ea247cc9544d678011ed88cca846
