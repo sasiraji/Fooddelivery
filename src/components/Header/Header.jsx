@@ -8,10 +8,9 @@ const Header = () => {
         <div className='header'>
             <div className="header-content">
                 <div className="header-left">
-                    <h1>TASTY FOOD<br />COMING TO YOU</h1>
+                    <h1>TASTY FOOD, DELIVERED WITH CARE</h1>
                     <p>
-                        Your time is precious, and we know your struggle only to get your 
-                        favorite food. Get your job done and let us lessen your hustle!
+                        At Aarya's Cuisine, we understand your cravings and your busy life. While you focus on what matters most, we bring your favorite dishes right to your doorstep — fresh, authentic, and hassle-free.
                     </p>
                     <div className="header-buttons">
                         <Link to="/menu/starters" className="order-now-btn">ORDER NOW</Link>
