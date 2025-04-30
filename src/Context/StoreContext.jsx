@@ -1,105 +1,78 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
-const StoreContext = createContext(null);
+export const StoreContext = createContext(null);
 
-export const StoreContextProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState([]);
-    const [foodList, setFoodList] = useState([]);
-    const [user, setUser] = useState(null);
+const StoreContextProvider = ({ children }) => {
+    const [cartItems, setCartItems] = useState({});
+    const [food_list, setFoodList] = useState([]);
+    const [menu_list, setMenuList] = useState([]);
     const [token, setToken] = useState(localStorage.getItem('token'));
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [url] = useState("http://localhost:4000");
+    const [currency] = useState("$");
+    const [deliveryCharge] = useState(5);
 
-    const addToCart = (item) => {
+    const addToCart = async (itemId) => {
+        setCartItems(prev => ({
+            ...prev,
+            [itemId]: (prev[itemId] || 0) + 1
+        }));
+    };
+
+    const removeFromCart = async (itemId) => {
         setCartItems(prev => {
-            const existingItem = prev.find(i => i._id === item._id);
-            if (existingItem) {
-                return prev.map(i => 
-                    i._id === item._id ? { ...i, quantity: i.quantity + 1 } : i
-                );
+            const newCart = { ...prev };
+            if (newCart[itemId] > 0) {
+                newCart[itemId]--;
+                if (newCart[itemId] === 0) {
+                    delete newCart[itemId];
+                }
             }
-            return [...prev, { ...item, quantity: 1 }];
+            return newCart;
         });
     };
 
-    const removeFromCart = (itemId) => {
-        setCartItems(prev => prev.filter(item => item._id !== itemId));
-    };
-
-    const updateCartItemQuantity = (itemId, quantity) => {
-        setCartItems(prev => 
-            prev.map(item => 
-                item._id === itemId ? { ...item, quantity } : item
-            )
-        );
-    };
-
-    const fetchFoodList = async () => {
-        try {
-            setLoading(true);
-            const response = await axios.get('/api/food-items');
-            setFoodList(response.data);
-        } catch (err) {
-            setError(err.message);
-        } finally {
-            setLoading(false);
+    const getTotalCartAmount = () => {
+        let total = 0;
+        for (const item of food_list) {
+            if (cartItems[item._id]) {
+                total += item.price * cartItems[item._id];
+            }
         }
+        return total;
     };
 
-    const login = async (credentials) => {
-        try {
-            setLoading(true);
-            const response = await axios.post('/api/auth/login', credentials);
-            const { token, user } = response.data;
-            setToken(token);
-            setUser(user);
-            localStorage.setItem('token', token);
-        } catch (err) {
-            setError(err.message);
-            throw err;
-        } finally {
-            setLoading(false);
+    const loadCartData = ({ token }) => {
+        // Load cart data from server or local storage
+        const savedCart = localStorage.getItem('cart');
+        if (savedCart) {
+            setCartItems(JSON.parse(savedCart));
         }
-    };
-
-    const logout = () => {
-        setToken(null);
-        setUser(null);
-        localStorage.removeItem('token');
     };
 
     useEffect(() => {
-        if (token) {
-            // Fetch user data
-            const fetchUser = async () => {
-                try {
-                    const response = await axios.get('/api/auth/me', {
-                        headers: { Authorization: `Bearer ${token}` }
-                    });
-                    setUser(response.data);
-                } catch (err) {
-                    setError(err.message);
-                    logout();
-                }
-            };
-            fetchUser();
-        }
-    }, [token]);
+        // Save cart to local storage whenever it changes
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+    }, [cartItems]);
 
     const value = {
         cartItems,
-        foodList,
-        user,
+        food_list,
+        menu_list,
         token,
         loading,
         error,
+        url,
+        currency,
+        deliveryCharge,
+        setToken,
+        setCartItems,
         addToCart,
         removeFromCart,
-        updateCartItemQuantity,
-        fetchFoodList,
-        login,
-        logout
+        getTotalCartAmount,
+        loadCartData
     };
 
     return (
@@ -109,12 +82,4 @@ export const StoreContextProvider = ({ children }) => {
     );
 };
 
-export const useStore = () => {
-    const context = useContext(StoreContext);
-    if (!context) {
-        throw new Error('useStore must be used within a StoreContextProvider');
-    }
-    return context;
-};
-
-export default StoreContext;
+export default StoreContextProvider;

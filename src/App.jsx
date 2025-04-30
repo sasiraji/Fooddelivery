@@ -4,7 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { StoreContext } from './Context/StoreContext'
+import StoreContextProvider from './Context/StoreContext'
 
 // Lazy load components
 const Home = lazy(() => import('./pages/Home/Home'));
@@ -58,7 +58,7 @@ const App = () => {
     }
 
     return (
-        <>
+        <StoreContextProvider>
             <ToastContainer
                 position="top-right"
                 autoClose={5000}
@@ -86,7 +86,7 @@ const App = () => {
                     <Footer />
                 </div>
             </Suspense>
-        </>
+        </StoreContextProvider>
     );
 }
 

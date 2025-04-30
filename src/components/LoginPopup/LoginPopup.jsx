@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useContext, useState } from 'react'
 import './LoginPopup.css'
 import { assets } from '../../assets/assets'
@@ -7,8 +6,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 
 const LoginPopup = ({ setShowLogin }) => {
-
-    const { setToken, url,loadCartData } = useContext(StoreContext)
+    const { setToken, url, loadCartData } = useContext(StoreContext)
     const [currState, setCurrState] = useState("Sign Up");
 
     const [data, setData] = useState({
@@ -25,23 +23,27 @@ const LoginPopup = ({ setShowLogin }) => {
 
     const onLogin = async (e) => {
         e.preventDefault()
-
-        let new_url = url;
-        if (currState === "Login") {
-            new_url += "/api/user/login";
-        }
-        else {
-            new_url += "/api/user/register"
-        }
-        const response = await axios.post(new_url, data);
-        if (response.data.success) {
-            setToken(response.data.token)
-            localStorage.setItem("token", response.data.token)
-            loadCartData({token:response.data.token})
-            setShowLogin(false)
-        }
-        else {
-            toast.error(response.data.message)
+        try {
+            let new_url = url;
+            if (currState === "Login") {
+                new_url += "/api/user/login";
+            }
+            else {
+                new_url += "/api/user/register"
+            }
+            const response = await axios.post(new_url, data);
+            if (response.data.success) {
+                setToken(response.data.token)
+                localStorage.setItem("token", response.data.token)
+                loadCartData({ token: response.data.token })
+                setShowLogin(false)
+                toast.success(currState === "Login" ? "Login successful!" : "Account created successfully!")
+            }
+            else {
+                toast.error(response.data.message)
+            }
+        } catch (error) {
+            toast.error("An error occurred. Please try again.")
         }
     }
 
@@ -49,16 +51,17 @@ const LoginPopup = ({ setShowLogin }) => {
         <div className='login-popup'>
             <form onSubmit={onLogin} className="login-popup-container">
                 <div className="login-popup-title">
-                    <h2>{currState}</h2> <img onClick={() => setShowLogin(false)} src={assets.cross_icon} alt="" />
+                    <h2>{currState}</h2>
+                    <img onClick={() => setShowLogin(false)} src={assets.cross_icon} alt="Close" />
                 </div>
                 <div className="login-popup-inputs">
                     {currState === "Sign Up" ? <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Your name' required /> : <></>}
-                    <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Your email' />
+                    <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Your email' required />
                     <input name='password' onChange={onChangeHandler} value={data.password} type="password" placeholder='Password' required />
                 </div>
-                <button>{currState === "Login" ? "Login" : "Create account"}</button>
+                <button type="submit">{currState === "Login" ? "Login" : "Create account"}</button>
                 <div className="login-popup-condition">
-                    <input type="checkbox" name="" id="" required/>
+                    <input type="checkbox" required />
                     <p>By continuing, i agree to the terms of use & privacy policy.</p>
                 </div>
                 {currState === "Login"
@@ -71,47 +74,3 @@ const LoginPopup = ({ setShowLogin }) => {
 }
 
 export default LoginPopup
-=======
-import React, { useContext, useState } from 'react'
-import './LoginPopup.css'
-import assets from '../../assets/assets'
-import { StoreContext } from '../../Context/StoreContext'
-import axios from 'axios'
-
-const LoginPopup = ({ setShowLogin }) => {
-  const [email, setEmail] = useState('');
-  const { url, setToken } = useContext(StoreContext);
-
-  const onLogin = async () => {
-    try {
-      const response = await axios.post(url + "/api/user/login", { email });
-      setToken(response.data.token);
-      localStorage.setItem("token", response.data.token);
-      setShowLogin(false);
-    } catch (error) {
-      alert("Login failed. Try again.");
-    }
-  };
-
-  return (
-    <div className="login-popup">
-      <form className="login-popup-container" onSubmit={(e) => e.preventDefault()}>
-        <div className="login-popup-title">
-          <h2>Login</h2>
-          <img onClick={() => setShowLogin(false)} src={assets.cross_icon} alt="Close" />
-        </div>
-        <div className="login-popup-input">
-          <input type="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        </div>
-        <button onClick={onLogin}>Continue</button>
-        <div className="login-popup-condition">
-          <input type="checkbox" required />
-          <p>By continuing, you agree to our Terms & Conditions</p>
-        </div>
-      </form>
-    </div>
-  );
-};
-
-export default LoginPopup;
->>>>>>> 654e5f637d09ea247cc9544d678011ed88cca846
