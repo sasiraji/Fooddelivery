@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../Context/StoreContext';
 import { FaShoppingCart, FaArrowUp } from 'react-icons/fa';
+import './FloatingActions.css';
 
 const FloatingActions = () => {
     const navigate = useNavigate();
@@ -32,7 +33,7 @@ const FloatingActions = () => {
     };
 
     return (
-        <>
+        <div className="floating-actions">
             <button 
                 className="floating-button floating-cart"
                 onClick={() => navigate('/cart')}
@@ -51,7 +52,7 @@ const FloatingActions = () => {
             >
                 <FaArrowUp />
             </button>
-        </>
+        </div>
     );
 };
 

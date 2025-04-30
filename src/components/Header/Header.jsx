@@ -38,18 +38,18 @@ const Header = () => {
                 <div className="header-right">
                     <div className="feature-icons">
                         <div className="icon-circle">
-                            <img src={assets.parcel_icon} alt="Fast Delivery" />
+                            <img src={assets.delivery_icon} alt="Fast Delivery" />
                         </div>
                         <div className="icon-circle">
-                            <img src={assets.rating_starts} alt="Best Quality" />
+                            <img src={assets.quality_icon} alt="Best Quality" />
                         </div>
                         <div className="icon-circle">
-                            <img src={assets.profile_icon} alt="24/7 Support" />
+                            <img src={assets.support_icon} alt="24/7 Support" />
                         </div>
                     </div>
                     <div className="food-image">
-                        <img src={assets.header_img} alt="Delicious Pizza" className="main-food" />
-                        <img src={assets.header_img} alt="Pizza Slice" className="floating-food" />
+                        <img src={assets.header_img} alt="Delicious Food" className="main-food" />
+                        <img src={assets.hero_animated} alt="Floating Food" className="floating-food" />
                     </div>
                 </div>
             </div>

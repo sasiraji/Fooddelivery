@@ -65,6 +65,7 @@ import delivery_icon from './delivery_icon.png'
 import quality_icon from './quality_icon.png'
 import support_icon from './support_icon.png'
 import sample_image from './sample-image.png'
+import hero_animated from './Herosection-Animatied.png'
 
 export const assets = {
     logo,
@@ -91,7 +92,8 @@ export const assets = {
     delivery_icon,
     quality_icon,
     support_icon,
-    sample_image
+    sample_image,
+    hero_animated
 }
 
 export const menu_list = [

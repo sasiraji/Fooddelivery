@@ -223,3 +223,15 @@
     justify-content: start;
   }
 }
+
+.cart-container {
+  padding: 40px 20px;
+  min-height: calc(100vh - 80px);
+  background: #f8f8f8;
+}
+
+.cart-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}

@@ -135,6 +135,8 @@
   position: relative;
   width: 100%;
   padding-top: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .main-food {
@@ -144,15 +146,21 @@
   display: block;
   margin: 0 auto;
   filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+  border-radius: 20px;
+  object-fit: cover;
 }
 
 .floating-food {
   position: absolute;
-  width: 150px;
-  top: 0;
-  right: 0;
+  width: 120px;
+  height: 120px;
+  top: 20px;
+  right: 20px;
   transform: rotate(45deg);
   animation: float 3s ease-in-out infinite;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes float {
